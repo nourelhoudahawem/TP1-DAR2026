@@ -10,7 +10,7 @@ public class Client {
         try {
             System.out.println("Je suis un client pas encore connecté...");
 
-            Socket socket = new Socket("localhost", 5000);
+            Socket socket = new Socket("192.168.31.16", 5000);
 
             System.out.println("Je suis un client connecté");
 
