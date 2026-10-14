@@ -53,10 +53,49 @@ Nous avons saisi un nombre positif. Le serveur multiplie cette valeur par 5 et r
 
 Nous avons saisi un nombre négatif pour vérifier que le programme effectue correctement la multiplication par 5 et renvoie un résultat négatif.
 
-![est avec un nombre négatif](screenshots/11-negative.png)
+![Test avec un nombre négatif](screenshots/11-negative.png)
 
-## Test avec zéro
+## 5.Test avec zéro
 
 Nous avons saisi la valeur zéro. Le résultat du calcul est zéro et cette saisie permet de terminer la communication entre le client et le serveur, conformément aux consignes du TP.
 
-![est avec un nombre négatif](screenshots/12-zero.png)
+![Test avec un nombre négatif](screenshots/12-zero.png)
+# Activité 1-3 : Amélioration du service de calculatrice
+## Étape 1 : Connexion Client/Serveur
+L'application utilise InetAddress et InetSocketAddress pour gérer l'adresse IP et le port de communication. Le serveur écoute sur l'adresse IP 192.168.31.17 et le port 5000.
+Le client utilise cette adresse pour se connecter au serveur
+## 1.Exécution du serveur
+![Exécution du serveur](screenshots/13-run-serveur.png)
+## 2.Connexion du client
+![Exécution du client](screenshots/14-run-client.png)
+## Étape 2 : Calculatrice améliorée
+
+Le client propose quatre opérations : addition, soustraction, multiplication et division. Il transmet le choix de l'opération et la valeur x au serveur.
+Le serveur effectue le calcul et renvoie le résultat au client.
+
+# 1.Test de l'addition
+Ce test permet de vérifier le fonctionnement de l’addition. Pour x = 10, le serveur calcule 10 + 5 et renvoie le résultat 15.
+
+![Test de l'addition ](screenshots/15-addition.png)
+# 2.Test de la soustraction
+Ce test permet de vérifier le fonctionnement de la soustraction. Pour x = 10, le serveur calcule 10 - 5 et renvoie le résultat 5.
+
+![Test de la soustraction](screenshots/16-soustraction.png)
+# 3.Test de la multiplication
+Ce test permet de vérifier le fonctionnement de la multiplication. Pour x = 10, le serveur calcule 10 × 5 et renvoie le résultat 50.
+
+![Test de la multiplication](screenshots/17-multiplication.png)
+# 4.Test de la division
+Ce test permet de vérifier le fonctionnement de la division. Pour x = 10, le serveur calcule 10 / 5 et renvoie le résultat 2.
+
+![Test de la division](screenshots/18-division.png)
+# 5.Arret de l'application
+Le client peut quitter l’application en sélectionnant l’option 0 dans le menu. Le serveur reçoit cette commande, termine la communication avec le client et ferme la connexion.
+Cette fonctionnalité permet d’arrêter proprement l’application après les tests.
+
+![Arret de l'application](screenshots/19-arret.png)
+
+
+
+
+
