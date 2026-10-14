@@ -1,27 +1,34 @@
 package serverPackage;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server {
-
     public static void main(String[] args) {
+        int port = 1234;
+        try (ServerSocket serverSocket = new ServerSocket(port)) {
+            System.out.println("Serveur en attente de connexion sur le port " + port + "...");
+            try (Socket socket = serverSocket.accept();
+                 DataInputStream in = new DataInputStream(socket.getInputStream());
+                 DataOutputStream out = new DataOutputStream(socket.getOutputStream())) {
 
-        try {
-            ServerSocket serverSocket = new ServerSocket(5000);
+                System.out.println("Client connecté : " + socket.getInetAddress());
+                int x;
+                do {
+                    x = in.readInt();
+                    int resultat = x * 5;
+                    System.out.println("Reçu : " + x + " -> envoi : " + resultat);
+                    out.writeInt(resultat);
+                    out.flush();
+                } while (x != 0);
 
-            System.out.println("Je suis un serveur en attente de la connexion d'un client");
-
-            Socket socket = serverSocket.accept();
-
-            System.out.println("Un client est connecté");
-
-            socket.close();
-            serverSocket.close();
-
+                System.out.println("Fin de la communication. Fermeture des sockets.");
+            }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Erreur serveur : " + e.getMessage());
         }
     }
 }

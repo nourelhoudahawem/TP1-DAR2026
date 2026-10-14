@@ -1,5 +1,5 @@
 # TP1-DAR2026 — Les sockets en mode connecté TCP
-
+## Activité 1-1 : Première connexion client-serveur 
 ## 1. Vérification de l’environnement
 Cette capture d’écran montre la vérification des versions de Git et de Java avec les commandes `git --version` et 
 `java --version`.
@@ -31,3 +31,32 @@ Cette capture d’écran montre la modification de l’adresse utilisée par le 
 Le test de connexion a réussi. Le client a pu établir une connexion TCP avec le serveur en utilisant l’adresse IPv4 de la machine sur le port 5000.
 
 ![Résultat de la connexion avec une adresse IP](screenshots/7-connexion-ip.png)
+
+## Activité 1-2 : Service de calculatrice
+## 1. Exécution du serveur
+
+Nous avons lancé l'application Serveur en premier. Le serveur attend les connexions du client et reçoit les entiers envoyés pour effectuer la multiplication par 5. 
+
+![Execution du serveur](screenshots/8-run-serveur.png)
+## 2.Exécution du client
+
+Après le lancement du serveur, nous avons exécuté l'application Client afin d'établir une connexion TCP avec le serveur.
+
+![Execution du client](screenshots/9-run-client.png)
+## 3.Test avec un nombre positif
+
+Nous avons saisi un nombre positif. Le serveur multiplie cette valeur par 5 et renvoie le résultat au client.
+
+![Test positif](screenshots/10-positif.png)
+
+## 4.Test avec un nombre négatif
+
+Nous avons saisi un nombre négatif pour vérifier que le programme effectue correctement la multiplication par 5 et renvoie un résultat négatif.
+
+![est avec un nombre négatif](screenshots/11-negative.png)
+
+## Test avec zéro
+
+Nous avons saisi la valeur zéro. Le résultat du calcul est zéro et cette saisie permet de terminer la communication entre le client et le serveur, conformément aux consignes du TP.
+
+![est avec un nombre négatif](screenshots/12-zero.png)
